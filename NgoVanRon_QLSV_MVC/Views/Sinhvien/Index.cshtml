@@ -1,0 +1,41 @@
+﻿@model IEnumerable<NgoVanRon_QLSV_MVC.Models.NgoVanRon_Sinhvien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách sinh viên</h1>
+
+<p>
+    <a asp-action="Create">Tạo mới sinh viên</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSinhVien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSinhVien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Xem chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

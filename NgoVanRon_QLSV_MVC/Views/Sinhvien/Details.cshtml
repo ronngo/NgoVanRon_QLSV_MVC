@@ -1,0 +1,30 @@
+﻿@model NgoVanRon_QLSV_MVC.Models.NgoVanRon_Sinhvien
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Xem chi tiết</h1>
+
+<div>
+    <h4>Sinh viên</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TenSinhVien)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TenSinhVien)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Sửa</a> |
+    <a asp-action="Index">Trở về</a>
+</div>
